@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*---------------------------------------------slider-------------------------------------------------------*/
+
+
+.slider{
+  
+    padding-bottom: 10px;
+    /*background-color: rgba(226, 226, 226, 0.34);*/
+    background-color: aliceblue;
+    box-sizing: border-box; 
+    border:0px solid rgb(15, 14, 14);  
+    width:0vh;
+    margin-top:25px;
+    height: 500px;
+   /* box-shadow:0px 0px 10px rgba(60, 60, 60, 0.658);*/
+    border-radius: 10px;
+  
+    white-space: nowrap;
+    overflow:hidden;
+    max-width: 100%;
+
+  
+
+
+    
+}
+.slide img{
+    height: 500px;
+    width:100vh;
+    margin:0px 01px;
+    border-radius: 20px;
+    opacity: 90%;
+    transition:  opacity 0.5s ease-in;
+   
+}
+.slide{
+    display: inline-flex;
+    animation: 65s slide infinite linear;
+    animation-play-state: running;
+    transition: 1s;
+
+}
+.slider:hover .slide{
+    animation-play-state: paused;
+   
+    cursor: pointer;
+}
+.slide img:hover{
+   
+    opacity: 100%;
+}
+/* animations */
+
+@keyframes  slide{
+    from{
+        transform: translateX(0);
+
+    }
+    to{
+        transform: translateX(-100%);
+         
+    }
+
+}
+
+/*
+.paused{
+    animation-play-state: paused;
+} */
+
+
+/*---------------------------------------------slider end-------------------------------------------------------*/
+
+
+/*---------------------------------------------play-pause button------------------------------------------------*/
+
+/*
+.emptyblock{
+    height:8vh;
+    width:15vh;
+    margin-top:10px;
+    margin-left: 46rem;
+    background-color: aliceblue;
+    box-shadow:0px 0px 10px rgba(60, 60, 60, 0.658); 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    border-radius:4px;
+    
+} */
+
+
+
+
+/*---------------------------------------------play-pause button------------------------------------------------*/
+
+

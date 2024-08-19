@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(15, 56, 72);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: rgb(176, 176, 218);
+    box-shadow: 0 0 10px rgba(17, 15, 15, 0.1);
+    border-radius:0 0 20px 20px;
+    border: 1.5px solid white;
+    background-image: url('53-light-purple-gradient.jpg');
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'gd-sage',"Times New Roman",serif;
+}
+
+button {
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 12px;
+    color: aliceblue;
+    background-color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    font-size: 25px;
+}

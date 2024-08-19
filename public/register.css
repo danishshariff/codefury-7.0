@@ -1,0 +1,166 @@
+*{
+    margin:0px;
+    padding:5px;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    min-height:80vh;
+    background: url('oo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no repeat;
+}
+.wrapper{
+    width: 420px;
+    background:rgba(245, 245, 245, 0.822);
+    border:1px solid rgb(4, 4, 4);
+   backdrop-filter:blur(5px) ;
+   box-shadow:5px 10px 10px rgb(14, 70, 79);
+    color: rgb(5, 5, 5);
+    border-radius: 10px;
+    padding: 20px 40px
+
+}
+.wrapper:hover{
+    transition: 0.3s;
+    background:whitesmoke;
+    
+}
+.wrapper h1{
+    text-align: center;
+    
+
+}
+.wrapper .input-box .input1{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0px;
+    
+}
+.input-box input{
+    
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    border: none;
+    outline:none;
+    border: 2px solid rgb(5, 5, 5);
+    border-radius: 40px;
+    font-size: 18px;
+    color:#020202;
+    padding: 10px 35px 20px 20px;
+}
+.input-box input::placeholder{
+    color: #02020295;
+
+}
+
+
+.input1 input{
+     
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    border: none;
+    outline:none;
+    border: 2px solid rgb(5, 5, 5);
+    border-radius: 40px;
+    font-size: 18px;
+    color:#020202;
+    padding: 10px 35px 20px 20px;
+
+}
+.input1 input::placeholder{
+    color: #02020295;
+}
+
+
+
+.input-box input:hover,input:active{
+    
+    background:rgba(245, 245, 245, 0.311);
+    transition:0.3s;
+    border: none;
+    outline:none;
+    border-radius: 40px;
+    transition: 0.3s;
+    animation: animate 2s linear infinite;
+   
+}
+.input-box input:focus{
+    box-shadow: 0px 0px 10px rgb(1, 45, 44);
+    border: none;
+    outline:none;
+
+}
+.input1 input:hover,input:active{
+    
+    background:rgba(245, 245, 245, 0.311);
+    transition:0.3s;
+    border: none;
+    outline:none;
+    border-radius: 40px;
+    transition: 0.3s;
+    animation: animate 2s linear infinite;
+   
+}
+.input1 input:focus{
+    box-shadow: 0px 0px 8px rgb(1, 45, 44);
+    border: none;
+    outline:none;
+
+}
+.wrapper .btn{
+    width: 100%;
+    height: 45%;
+    background: #020202;
+    border:none;
+    outline: none;
+    border-radius: 40px;
+    
+    cursor:pointer;
+    font-size: 16px;
+    color:#333;
+    font-weight: 600;
+}
+.btn a{
+    text-decoration: none;
+   color: #fff;;
+}
+.btn:hover{
+    box-shadow: 2px 2px 2px rgb(125, 127, 128);
+   
+}
+.wrapper .comeback{
+    text-align:center;
+    font-size: 14px;
+    margin-top: 20px 0 15px;
+    
+
+}
+.comeback p a{
+    font-weight: 600;
+}
+.comeback p a{
+    text-decoration: none;
+   color:#020202;
+}
+.comeback p a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+   
+}
+.input-box  #pp{
+    font-size: small;
+
+}
+.input1 #pp{
+    font-size: small;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disaster Preparedness Map</title>
+    <style>
+        #map {
+            height: 70%; 
+            width: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        #controls-container{
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+    </style>
+    
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.css" type="text/css">
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaXNoOTIiLCJhIjoiY2x6bzFkZDB6MDZ5aDJpczNkNDBlYTVwOSJ9.LO7hY1yRNLXeBL5LQPCdkQ'; 
+        
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [77.58667, 12.97542], // Initial center point
+            zoom: 15
+        });
+
+        const directions = new MapboxDirections({
+            accessToken: mapboxgl.accessToken,
+            unit: 'metric', 
+            profile: 'mapbox/walking', 
+            interactive: true,
+            controls: {
+                inputs: true, 
+                instructions: true 
+            }
+        });
+
+        map.addControl(directions, 'top-left');
+
+        let userLocation = [77.58667, 12.97542]; //default user location
+
+        function updateUserLocation(position) {
+            userLocation = [position.coords.longitude, position.coords.latitude];
+            directions.setOrigin(userLocation);
+            map.flyTo({
+                center: userLocation,
+                zoom: 15,
+                essential: true
+            });
+        }
+
+        navigator.geolocation.getCurrentPosition(updateUserLocation, error => {
+            console.error('Geolocation error:', error);
+        });
+
+        navigator.geolocation.watchPosition(position => {
+            updateUserLocation(position);
+        }, error => {
+            console.error('Geolocation watch error:', error);
+        }, { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 });
+
+        map.on('click', (event) => {
+            const destination = [event.lngLat.lng, event.lngLat.lat];
+            directions.setDestination(destination);
+            
+            if (userLocation && destination) {
+                map.fitBounds([userLocation, destination], {
+                    padding: 50,
+                    maxZoom: 15
+                });
+            } else {
+                console.error('User location or destination is missing.');
+            }
+        });
+    </script>
+</body>
+</html>
+
